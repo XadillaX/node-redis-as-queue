@@ -1,0 +1,33 @@
+{
+  "name": "redis-as-queue",
+  "version": "0.0.1",
+  "description": "A node.js package for regarding redis as a message queue.",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {
+    "redis": "^0.12.1",
+    "scarlet-task": "^0.1.0",
+    "async": "^0.9.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "node test/test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/XadillaX/node-redis-as-queue.git"
+  },
+  "keywords": [
+    "redis",
+    "queue",
+    "message queue"
+  ],
+  "author": "XadillaX",
+  "license": "GPLv2",
+  "bugs": {
+    "url": "https://github.com/XadillaX/node-redis-as-queue/issues"
+  },
+  "homepage": "https://github.com/XadillaX/node-redis-as-queue"
+}
