@@ -17,7 +17,7 @@ for(var i = 0; i < 10; i++) {
     });
 }
 
-scarlet.push(undefined, function() {
+scarlet.push(undefined, function(TO) {
     queue.get(-1, function(err, messages) {
         console.log(messages);
         queue.removeAmount(function(err, amount) {
@@ -29,9 +29,22 @@ scarlet.push(undefined, function() {
 
                 queue.length(function(err, l) {
                     console.log(l);
+                    scarlet.taskDone(TO);
                 });
             });
         })
     });
+});
+
+scarlet.push(undefined, function(TO) {
+    queue.destroy();
+
+    setTimeout(function() {
+        queue.push(1, function(err) {
+            console.log("===");
+            console.log(err);
+            scarlet.taskDone(TO);
+        });
+    }, 1000);
 });
 
