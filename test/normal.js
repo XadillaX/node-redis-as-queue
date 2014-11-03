@@ -20,16 +20,14 @@ for(var i = 0; i < 10; i++) {
 scarlet.push(undefined, function(TO) {
     queue.get(-1, function(err, messages) {
         console.log(messages);
-        queue.removeAmount(function(err, amount) {
+        queue.removeAmount(5, function(err, amount) {
             console.log(amount);
 
-            messages.pop();messages.pop();
-            queue.removeMessages(messages, function(err, amount, still) {
-                console.log(amount, still);
+            queue.get(-1, function(err, messages) {
+                console.log(messages);
 
-                queue.length(function(err, l) {
-                    console.log(l);
-                    scarlet.taskDone(TO);
+                queue.removeAmount(-1, function() {
+                    process.exit(0);
                 });
             });
         })
