@@ -27,7 +27,12 @@ scarlet.push(undefined, function(TO) {
                 console.log(messages);
 
                 queue.removeAmount(-1, function() {
-                    process.exit(0);
+                    queue.length(function(err, l) {
+                        console.log(l);
+                        queue.deleteQueue(function(){
+                            process.exit(0);
+                        });
+                    });
                 });
             });
         })
