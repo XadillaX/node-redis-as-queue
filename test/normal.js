@@ -10,7 +10,7 @@ var Redis = require("redis");
 var NormalQueue = require("../").NormalQueue;
 var MAX_UINT = 4294967295;
 
-describe("[normal queue]", function() {
+describe.skip("[normal queue]", function() {
     var queueName = "mocha";
     var normalQueue;
     var redis;
@@ -105,7 +105,7 @@ describe("[normal queue]", function() {
         });
 
         it("amount equals to -1 (get all the messages) - [ '0', '1', ..., '9' ]", function(done) {
-            normalQueue.get(100, function(err, messages) {
+            normalQueue.get(-1, function(err, messages) {
                 var std = [];
                 for(var i = 0; i < 10; i++) std.push(i.toString());
                 messages.should.eql(std);
