@@ -10,7 +10,7 @@ var Redis = require("redis");
 var NormalQueue = require("../").NormalQueue;
 var MAX_UINT = 4294967295;
 
-describe.skip("[normal queue]", function() {
+describe("[normal queue]", function() {
     var queueName = "mocha";
     var normalQueue;
     var redis;
