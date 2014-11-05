@@ -47,3 +47,36 @@ normalQueue.push("YOUR MESSAGE", function(err) {
     console.log(err);
 });
 ```
+
+#### Pop
+
+To get message(s) from your redis queue, you may use `get` function.
+
+##### Get earlist one message
+
+```javascript
+normalQueue.get(function(err, messages) {
+    console.log(err);
+    if(messages.length) console.log(messages[0]);
+});
+```
+
+##### Get earlist N message(s)
+
+```javascript
+// This call gets 10 earlist messages
+normalQueue.get(10, function(err, messages) {
+    console.log(err);
+    for(var i = 0; i < messages.length; i++) console.log(messages[i]);
+});
+```
+
+##### Get all message(s)
+
+```javascript
+normalQueue.get(-1, function(err, messages) {
+    console.log(err);
+    for(var i = 0; i < messages.length; i++) console.log(messages[i]);
+});
+```
+
