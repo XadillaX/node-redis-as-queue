@@ -108,3 +108,13 @@ normalQueue.removeAmount(-1, function(err) {
 });
 ```
 
+#### Length
+
+Get the length of current queue.
+
+```javascript
+normalQueue.length(function(err, len) {
+    console.log(len);
+});
+```
+
