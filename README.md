@@ -48,7 +48,7 @@ normalQueue.push("YOUR MESSAGE", function(err) {
 });
 ```
 
-#### Pop
+#### Get
 
 To get message(s) from your redis queue, you may use `get` function.
 
@@ -77,6 +77,34 @@ normalQueue.get(10, function(err, messages) {
 normalQueue.get(-1, function(err, messages) {
     console.log(err);
     for(var i = 0; i < messages.length; i++) console.log(messages[i]);
+});
+```
+
+#### Remove
+
+To remove message(s) from your redis queue, you may use `removeAmount` function.
+
+##### Remove earlist one message
+
+```javascript
+normalQueue.removeAmount(function(err) {
+    console.log(err);
+});
+```
+
+##### Remove earlist N message(s)
+
+```javascript
+normalQueue.removeAmount(5, function(err) {
+    console.log(err);
+});
+```
+
+##### Remove all the message(s)
+
+```javascript
+normalQueue.removeAmount(-1, function(err) {
+    console.log(err);
 });
 ```
 
