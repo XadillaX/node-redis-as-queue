@@ -138,3 +138,32 @@ var uniqueQueue = new raq.UniqueQueue(QUEUE_NAME, [...]);
 > ...
 > ```
 
+#### Push
+
+Push a message to the queue.
+
+##### Need update
+
+This call will check if your message is existing. If existing, it will move the previous message to the end of queue. Otherwise, your message will be pushed at the end of queue.
+
+```javascript
+uniqueQueue.push("YOUR_MESSAGE", true, function(err) {
+    console.log(err);
+});
+```
+
+##### Do not update
+
+This call will check if your message is existing. If existing, it won't do anything. Otherwise, your message will be pushed at the end of queue.
+
+```javascript
+uniqueQueue.push("YOUR_MESSAGE", function(err) {
+    console.log(err);
+});
+
+// or you can do this
+
+uniqueQueue.push("YOUR_MESSAGE", false, function(err) {
+    console.log(err);
+});
+```
