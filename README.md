@@ -4,7 +4,7 @@ A node.js package for regarding redis as a message queue.
 
 ## Installation
 
-```sh
+```shell
 $ npm install redis-as-queue
 ```
 
@@ -22,6 +22,8 @@ var raq = require("redis-as-queue");
 
 ### Normal Queue
 
+#### Create
+
 ```javascript
 var normalQueue = new raq.NormalQueue(QUEUE_NAME, [...]);
 ```
@@ -36,5 +38,12 @@ var normalQueue = new raq.NormalQueue(QUEUE_NAME, [...]);
 > ...
 > ```
 
-#### Create
+#### Push
 
+To push a message to your queue, you may use this function:
+
+```javascript
+normalQueue.push("YOUR MESSAGE", function(err) {
+    console.log(err);
+});
+```
