@@ -167,3 +167,36 @@ uniqueQueue.push("YOUR_MESSAGE", false, function(err) {
     console.log(err);
 });
 ```
+
+#### Get
+
+##### Get first message
+
+uniqueQueue.get(function(err, messages) {
+    console.log(err);
+    if(messages.length) {
+        console.log(messages[0].message);
+        console.log(messages[0].updatedAt);
+    }
+});
+
+##### Get first N message(s)
+
+uniqueQueue.get(3, function(err, messages) {
+    console.log(err);
+    for(var i = 0; i < messages.length; i++) {
+        console.log(messages[i].message);
+        console.log(messages[i].updatedAt);
+    }
+});
+
+##### Get all the message(s)
+
+uniqueQueue.get(-1, function(err, messages) {
+    console.log(err);
+    for(var i = 0; i < messages.length; i++) {
+        console.log(messages[i].message);
+        console.log(messages[i].updatedAt);
+    }
+});
+
