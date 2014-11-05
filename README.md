@@ -172,6 +172,7 @@ uniqueQueue.push("YOUR_MESSAGE", false, function(err) {
 
 ##### Get first message
 
+```javascript
 uniqueQueue.get(function(err, messages) {
     console.log(err);
     if(messages.length) {
@@ -179,9 +180,11 @@ uniqueQueue.get(function(err, messages) {
         console.log(messages[0].updatedAt);
     }
 });
+```
 
 ##### Get first N message(s)
 
+```javascript
 uniqueQueue.get(3, function(err, messages) {
     console.log(err);
     for(var i = 0; i < messages.length; i++) {
@@ -189,9 +192,11 @@ uniqueQueue.get(3, function(err, messages) {
         console.log(messages[i].updatedAt);
     }
 });
+```
 
 ##### Get all the message(s)
 
+```javascript
 uniqueQueue.get(-1, function(err, messages) {
     console.log(err);
     for(var i = 0; i < messages.length; i++) {
@@ -199,4 +204,5 @@ uniqueQueue.get(-1, function(err, messages) {
         console.log(messages[i].updatedAt);
     }
 });
+```
 
