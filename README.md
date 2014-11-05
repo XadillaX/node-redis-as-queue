@@ -118,3 +118,23 @@ normalQueue.length(function(err, len) {
 });
 ```
 
+### Unique Queue
+
+Each message in unique queue is unique.
+
+#### Create
+
+```javascript
+var uniqueQueue = new raq.UniqueQueue(QUEUE_NAME, [...]);
+```
+
+> **Note:** `[...]` is the option(s) to connect redis server. Refer to [node-redis document](https://www.npmjs.org/package/redis#redis-createclient-).
+>
+> Eg.
+>
+> ```javascript
+> new raq.UniqueQueue(QUEUE_NAME, 6379, '127.0.0.1', {});
+> new raq.UniqueQueue(QUEUE_NAME, unix_socket, options);
+> ...
+> ```
+
