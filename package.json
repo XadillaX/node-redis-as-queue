@@ -7,9 +7,9 @@
     "test": "test"
   },
   "dependencies": {
-    "redis": "^0.12.1",
-    "scarlet-task": "^0.1.0",
-    "async": "^0.9.0"
+    "redis": "~0.12.1",
+    "scarlet-task": "~0.1.0",
+    "async": "~0.9.0"
   },
   "devDependencies": {
     "mocha": "~2.0.1",
