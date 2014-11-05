@@ -227,3 +227,33 @@ uniqueQueue.get(10, function(err, messages) {
 });
 ```
 
+#### Length
+
+Refer to [length section](#length) in **Normal Queue**.
+
+### Common Functions
+
+#### Delete Queue
+
+Delete this queue key and values in redis.
+
+```javascript
+uniqueQueue.deleteQueue(function() {});
+normalQueue.deleteQueue(function() {});
+```
+
+#### Destroy Queue Object
+
+Let the queue object disconnect from redis server and let this instance can't do any other thing any more.
+
+```javascript
+uniqueQueue.destroy();
+normalQueue.destroy();
+```
+
+## Contribute
+
+You're welcome to pull requests!
+
+> 「雖然我覺得不怎麼可能有人會關注我」
+
