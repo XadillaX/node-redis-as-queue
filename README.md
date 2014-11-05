@@ -206,3 +206,24 @@ uniqueQueue.get(-1, function(err, messages) {
 });
 ```
 
+#### Remove Amount
+
+Refer to [remove section](#remove) in **Normal Queue**.
+
+#### Remove Messages
+
+Remove one or more certain message(s) in the queue.
+
+```javascript
+uniqueQueue.get(10, function(err, messages) {
+    for(var i = 0; i < 5; i++) messages.shift();
+
+    // Remove Messages
+    uniqueQueue.removeMessages(messages, function(err, removeCount, notRemovedMessages) {
+        console.log(err);
+        console.log(removeCount);
+        for(var i = 0; i < notRemovedMessages.length; i++) console.log(notRemovedMessages[i].message);
+    });
+});
+```
+
