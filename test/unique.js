@@ -139,6 +139,17 @@ describe("[unique queue]", function() {
             });
         });
 
+        it("remove empty messages", function(done) {
+            uniqueQueue.removeMessages([], function(err, removeCount, still) {
+                removeCount.should.eql(0);
+                still.should.eql([]);
+                uniqueQueue.get(-1, function(err, messages) {
+                    messages.should.eql(_stdMessages0);
+                    done();
+                });
+            });
+        });
+
         it("delete messages", function(done) {
             var out = [];
             var left = [];

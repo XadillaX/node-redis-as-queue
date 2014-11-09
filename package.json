@@ -1,6 +1,6 @@
 {
   "name": "redis-as-queue",
-  "version": "0.0.1-fix",
+  "version": "0.0.2",
   "description": "A node.js package for regarding redis as a message queue.",
   "main": "index.js",
   "directories": {
